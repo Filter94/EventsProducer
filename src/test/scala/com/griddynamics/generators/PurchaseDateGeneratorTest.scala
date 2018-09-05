@@ -1,6 +1,6 @@
 package com.griddynamics.generators
 
-import com.griddynamics.generators.impl.generators.GUPurchaceDateGenerator
+import com.griddynamics.generators.impl.GUPurchaceDateGenerator
 import org.scalatest.FunSuite
 
 class PurchaseDateGeneratorTest extends FunSuite {

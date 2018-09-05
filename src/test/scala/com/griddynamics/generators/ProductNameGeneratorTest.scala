@@ -1,6 +1,6 @@
 package com.griddynamics.generators
 
-import com.griddynamics.generators.impl.generators.UniformProductNameGenerator
+import com.griddynamics.generators.impl.UniformProductNameGenerator
 import org.scalatest.FunSuite
 
 class ProductNameGeneratorTest extends FunSuite {

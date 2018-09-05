@@ -1,7 +1,6 @@
 package com.griddynamics.generators.impl
 
-import com.griddynamics.generators.abs.{IpAddressGenerator, RandomEventsGenerator}
-import com.griddynamics.generators.impl.generators._
+import com.griddynamics.generators.abs.RandomEventsGenerator
 
 object GridEventsProducer {
   def apply(): GridEventsProducer = new GridEventsProducer()
@@ -9,8 +8,8 @@ object GridEventsProducer {
 
 class GridEventsProducer extends RandomEventsGenerator {
   protected val productNameGenerator = UniformProductNameGenerator()
-  protected val productPriceGenerator = GaussianProductPriceGenerator()
+  protected val productPriceGenerator = GaussianProductPriceGenerator(50, 25)
   protected val purchaseDateGenerator = GUPurchaceDateGenerator()
   protected val productCategoryGenerator = UniformProductCategoryGenerator()
-  protected val ipAddressGenerator: IpAddressGenerator = UniformIpAddressGenerator()
+  protected val ipAddressGenerator = UniformIpAddressGenerator()
 }

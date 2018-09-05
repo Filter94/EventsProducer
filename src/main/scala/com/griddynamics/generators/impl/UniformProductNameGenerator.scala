@@ -1,4 +1,4 @@
-package com.griddynamics.generators.impl.generators
+package com.griddynamics.generators.impl
 
 import com.griddynamics.generators.abs.ProductNameGenerator
 

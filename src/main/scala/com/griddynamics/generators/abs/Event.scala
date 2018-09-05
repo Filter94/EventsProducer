@@ -9,7 +9,7 @@ case class Event(productName: String, productPrice: Float, purchaseDate: DateTim
     Seq(
       productName,
       productPrice,
-      DateTimeFormat.forPattern("yyyy-MM-dd HH:mm").print(purchaseDate),
+      DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSSS").print(purchaseDate),
       productCategory,
       clientIp
     ).mkString(",")
