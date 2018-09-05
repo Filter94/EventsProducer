@@ -3,7 +3,7 @@ package com.griddynamics.generators.impl
 import scala.util.Random
 
 object RNG {
-  private lazy val rng = new Random()
+  lazy val rng = new Random()
 
   /**
     * Generates a random number with normal distribution by given parameters

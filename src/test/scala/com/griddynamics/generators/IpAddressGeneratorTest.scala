@@ -9,4 +9,9 @@ class IpAddressGeneratorTest extends FunSuite {
     val generator = UniformIpAddressGenerator()
     assert(generator.generateIpAddress() != generator.generateIpAddress())
   }
+
+  test("Generator returns something which looks like IPs") {
+    val generator = UniformIpAddressGenerator()
+    assert(generator.generateIpAddress().matches("\\d+.\\d+.\\d+.\\d+"))
+  }
 }

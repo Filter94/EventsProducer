@@ -7,7 +7,14 @@ object UniformIpAddressGenerator {
 }
 
 class UniformIpAddressGenerator extends IpAddressGenerator {
+  private def randomPortion(): Int = RNG.rng.nextInt(256)
+
   def generateIpAddress(): String = {
-    "Ip address"
+    val portions = for {
+      _ <- 0 until 4
+    } yield {
+      randomPortion()
+    }
+    portions.mkString(".")
   }
 }
