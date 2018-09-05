@@ -1,6 +1,6 @@
 package com.griddynamics.generators
 
-import com.griddynamics.impl.generators.GaussianProductPriceGenerator
+import com.griddynamics.generators.impl.generators.GaussianProductPriceGenerator
 import org.scalatest.FunSuite
 
 class ProductPriceGeneratorTest extends FunSuite {

@@ -3,7 +3,7 @@ package com.griddynamics
 import java.io.PrintStream
 import java.net.{InetAddress, Socket}
 
-import com.griddynamics.impl.GridEventsProducer
+import com.griddynamics.generators.impl.GridEventsProducer
 
 import scala.io.BufferedSource
 

@@ -1,6 +1,6 @@
-package com.griddynamics.impl.generators
+package com.griddynamics.generators.impl.generators
 
-import com.griddynamics.abs.generators.ProductNameGenerator
+import com.griddynamics.generators.abs.ProductNameGenerator
 
 object UniformProductNameGenerator {
   def apply(): UniformProductNameGenerator = new UniformProductNameGenerator()

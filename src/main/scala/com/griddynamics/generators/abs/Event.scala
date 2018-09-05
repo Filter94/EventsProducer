@@ -1,4 +1,4 @@
-package com.griddynamics.abs
+package com.griddynamics.generators.abs
 
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat

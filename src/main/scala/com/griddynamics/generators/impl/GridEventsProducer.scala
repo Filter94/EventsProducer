@@ -1,8 +1,7 @@
-package com.griddynamics.impl
+package com.griddynamics.generators.impl
 
-import com.griddynamics.abs.RandomEventsGenerator
-import com.griddynamics.abs.generators.IpAddressGenerator
-import com.griddynamics.impl.generators._
+import com.griddynamics.generators.abs.{IpAddressGenerator, RandomEventsGenerator}
+import com.griddynamics.generators.impl.generators._
 
 object GridEventsProducer {
   def apply(): GridEventsProducer = new GridEventsProducer()

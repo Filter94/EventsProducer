@@ -1,6 +1,6 @@
-package com.griddynamics.impl.generators
+package com.griddynamics.generators.impl.generators
 
-import com.griddynamics.abs.generators.ProductCategoryGenerator
+import com.griddynamics.generators.abs.ProductCategoryGenerator
 
 object UniformProductCategoryGenerator {
   def apply(): UniformProductCategoryGenerator = new UniformProductCategoryGenerator()

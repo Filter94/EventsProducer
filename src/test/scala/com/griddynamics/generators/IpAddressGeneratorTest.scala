@@ -1,6 +1,6 @@
 package com.griddynamics.generators
 
-import com.griddynamics.impl.generators.UniformIpAddressGenerator
+import com.griddynamics.generators.impl.generators.UniformIpAddressGenerator
 import org.scalatest.FunSuite
 
 class IpAddressGeneratorTest extends FunSuite {

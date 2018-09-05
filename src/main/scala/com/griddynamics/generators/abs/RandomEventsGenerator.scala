@@ -1,6 +1,4 @@
-package com.griddynamics.abs
-
-import com.griddynamics.abs.generators._
+package com.griddynamics.generators.abs
 
 abstract class RandomEventsGenerator extends EventsGenerator {
   protected val productNameGenerator: ProductNameGenerator
