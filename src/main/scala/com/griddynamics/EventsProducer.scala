@@ -13,14 +13,10 @@ object EventsProducer extends App with Logging {
   val eventsGenerator = GridEventsGenerator()
   val s = new Socket(InetAddress.getByName("localhost"), 44444)
   val out = new PrintStream(s.getOutputStream)
-  assert(s.isBound)
-  assert(s.isConnected)
-  eventsGenerator.foreach {
-    e =>
-      val eventString = e.toString
+  do {
+      val eventString = eventsGenerator.next() .toString
       out.println(eventString)
-      in.next()  // to slow things down a bit.
       logger.debug(eventString)
-  }
+  } while (in.hasNext && in.next() != null)   // to slow things down a bit.
   s.close()
 }
