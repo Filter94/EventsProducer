@@ -13,4 +13,6 @@ class PurchaseDateGeneratorTest extends FunSuite {
     val generator = GUPurchaseDateGenerator()
     assert(generator.generatePurchaseDate().getMinuteOfDay != generator.generatePurchaseDate().getMinuteOfDay)
   }
+
+  // TBA all dates are in range
 }

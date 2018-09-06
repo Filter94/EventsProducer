@@ -29,17 +29,18 @@ object GUPurchaseDateGenerator {
   case class Config(purchaseDateStart: DateTime, purchaseDateDays: Int,
                     purchaseTimeMean: Float, purchaseTimeVariance: Float)
 
+  protected val MINUTES_IN_A_DAY = 1440
 }
 
 class GUPurchaseDateGenerator(config: GUPurchaseDateGenerator.Config) extends PurchaseDateGenerator {
   private def generateDate(): DateTime = {
     val daysOffset = RNG.rng.nextInt(config.purchaseDateDays)
-    config.purchaseDateStart.plusDays(daysOffset)
+    config.purchaseDateStart.plusDays(daysOffset)  // days offset + start day = daysOffset + 1
   }
 
   def generatePurchaseDate(): DateTime = {
     val date = generateDate()
     val minuteOfTheDay = RNG.gaussianWithMeanAndSigma(config.purchaseTimeMean, config.purchaseTimeVariance)
-    date.plusMinutes(minuteOfTheDay.toInt)
+    date.plusMinutes(minuteOfTheDay.toInt max 0 min (GUPurchaseDateGenerator.MINUTES_IN_A_DAY - 1))
   }
 }
