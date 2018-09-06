@@ -19,5 +19,4 @@ libraryDependencies ++= Seq(
 
 mainClass in assembly := Some("com.griddynamics.EventsProducer")
 assemblyJarName in assembly := "EventsProducer.jar"
-test in assembly := {}
 

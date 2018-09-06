@@ -4,7 +4,7 @@ import com.griddynamics.generators.impl.GUPurchaseDateGenerator
 import org.scalatest.FunSuite
 
 class PurchaseDateGeneratorTest extends FunSuite {
-  test("Generator returns different dates every call") {
+  test("Generator returns different dateTimes every call") {
     val generator = GUPurchaseDateGenerator()
     assert(generator.generatePurchaseDate() != generator.generatePurchaseDate())
   }
