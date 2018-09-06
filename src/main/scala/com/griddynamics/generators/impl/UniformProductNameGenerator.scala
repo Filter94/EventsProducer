@@ -1,13 +1,25 @@
 package com.griddynamics.generators.impl
 
+import java.io.InputStream
+
 import com.griddynamics.generators.abs.ProductNameGenerator
 
+import scala.io.Source
+
 object UniformProductNameGenerator {
-  def apply(): UniformProductNameGenerator = new UniformProductNameGenerator()
+  def apply(sourceFileName: String): UniformProductNameGenerator = new UniformProductNameGenerator(sourceFileName)
 }
 
-class UniformProductNameGenerator extends ProductNameGenerator {
+class UniformProductNameGenerator(val sourceFileName: String) extends ProductNameGenerator {
+  private lazy val nameOptions: Array[String] = {
+    val stream : InputStream = getClass.getResourceAsStream(sourceFileName)
+    val result = Source.fromInputStream(stream).getLines().toArray
+    stream.close()
+    result
+  }
+
   def generateProductName(): String = {
-    "Product name"
+    val nextPosition = RNG.rng.nextInt(nameOptions.length)
+    nameOptions(nextPosition)
   }
 }

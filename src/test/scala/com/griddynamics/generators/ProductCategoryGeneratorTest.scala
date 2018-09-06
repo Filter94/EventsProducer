@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 
 class ProductCategoryGeneratorTest extends FunSuite {
   test("Generator returns different categories every call") {
-    val generator = UniformProductCategoryGenerator()
+    val generator = UniformProductCategoryGenerator("/product_categories.txt")
     assert(generator.generateProductCategory() != generator.generateProductCategory())
   }
 }

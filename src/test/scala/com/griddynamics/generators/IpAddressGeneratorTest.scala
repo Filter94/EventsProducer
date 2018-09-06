@@ -4,7 +4,6 @@ import com.griddynamics.generators.impl.UniformIpAddressGenerator
 import org.scalatest.FunSuite
 
 class IpAddressGeneratorTest extends FunSuite {
-
   test("Generator returns different IPs every call") {
     val generator = UniformIpAddressGenerator()
     assert(generator.generateIpAddress() != generator.generateIpAddress())

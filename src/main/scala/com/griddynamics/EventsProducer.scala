@@ -3,7 +3,6 @@ package com.griddynamics
 import java.io.PrintStream
 import java.net.{InetAddress, Socket}
 
-import com.griddynamics.generators.impl.GridEventsProducer
 import org.apache.logging.log4j.scala.Logging
 
 import scala.io.BufferedSource
@@ -11,7 +10,7 @@ import scala.io.BufferedSource
 
 object EventsProducer extends App with Logging {
   lazy val in = new BufferedSource(s.getInputStream).getLines()
-  val eventsGenerator = GridEventsProducer()
+  val eventsGenerator = GridEventsGenerator()
   val s = new Socket(InetAddress.getByName("localhost"), 44444)
   val out = new PrintStream(s.getOutputStream)
   assert(s.isBound)
