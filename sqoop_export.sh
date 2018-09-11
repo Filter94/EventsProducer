@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sqoop export --connect jdbc:mysql://localhost/sqoop_test,charset=UTF8 \
 --username root \
 --table purchased_categories \
