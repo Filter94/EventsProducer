@@ -1,6 +1,6 @@
-select productCategory, productName, productSells from (
-  select t.*, row_number() over (partition by productCategory order by productSells desc) as row_number from (
-    select productCategory, productName, sum(productPrice) as productSells
+select productCategory, productName, productPurchased from (
+  select t.*, row_number() over (partition by productCategory order by productPurchased desc) as row_number from (
+    select productCategory, productName, count(*) as productPurchased
     from events
     group by productCategory, productName
     ) t
