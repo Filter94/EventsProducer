@@ -1,6 +1,6 @@
 package com.griddynamics.generators.impl
 
-import com.griddynamics.generators.abs.PurchaseDateGenerator
+import com.griddynamics.generators.abstraction.PurchaseDateGenerator
 import org.joda.time.DateTime
 
 object GUPurchaseDateGenerator {

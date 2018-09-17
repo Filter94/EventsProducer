@@ -2,7 +2,7 @@ package com.griddynamics.generators.impl
 
 import java.io.InputStream
 
-import com.griddynamics.generators.abs.ProductNameGenerator
+import com.griddynamics.generators.abstraction.ProductNameGenerator
 
 import scala.io.Source
 

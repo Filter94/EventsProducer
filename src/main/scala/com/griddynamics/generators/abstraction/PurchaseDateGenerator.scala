@@ -1,4 +1,4 @@
-package com.griddynamics.generators.abs
+package com.griddynamics.generators.abstraction
 
 import org.joda.time.DateTime
 

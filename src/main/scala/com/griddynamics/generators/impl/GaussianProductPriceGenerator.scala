@@ -1,6 +1,6 @@
 package com.griddynamics.generators.impl
 
-import com.griddynamics.generators.abs.ProductPriceGenerator
+import com.griddynamics.generators.abstraction.ProductPriceGenerator
 
 object GaussianProductPriceGenerator {
   def apply(mean: Float, sigma: Float): GaussianProductPriceGenerator = new GaussianProductPriceGenerator(mean, sigma)

@@ -1,6 +1,6 @@
 package com.griddynamics.generators.impl
 
-import com.griddynamics.generators.abs.IpAddressGenerator
+import com.griddynamics.generators.abstraction.IpAddressGenerator
 
 object UniformIpAddressGenerator {
   def apply(): UniformIpAddressGenerator = new UniformIpAddressGenerator()

@@ -1,11 +1,11 @@
 package com.griddynamics.generators
 
-import com.griddynamics.GridEventsGenerator
+import com.griddynamics.DefaultEventsGenerator
 import org.scalatest.FunSuite
 
-class GridEventsGeneratorTest extends FunSuite {
+class DefaultEventsGeneratorTest extends FunSuite {
   test("Generator returns different events every call") {
-    val generator = GridEventsGenerator()
+    val generator = DefaultEventsGenerator()
     assert(generator.next() != generator.next())
   }
 }

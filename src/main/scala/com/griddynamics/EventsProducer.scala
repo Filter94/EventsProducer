@@ -10,7 +10,7 @@ import scala.io.BufferedSource
 
 object EventsProducer extends App with Logging {
   lazy val in = new BufferedSource(s.getInputStream).getLines()
-  val eventsGenerator = GridEventsGenerator()
+  val eventsGenerator = DefaultEventsGenerator()
   val s = new Socket(InetAddress.getByName(args(0)), args(1).toInt)
   val out = new PrintStream(s.getOutputStream)
   var counter = 0
