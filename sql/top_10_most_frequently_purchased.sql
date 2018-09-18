@@ -1,3 +1,6 @@
+INSERT OVERWRITE DIRECTORY '/user/rvaseev/results/top_10_product_sells_by_category'
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
 select product_category, product_name, product_sells from (
   select t.*, row_number() over (partition by product_category order by product_sells desc) as row_number from (
     select product_category, product_name, count(*) as product_sells

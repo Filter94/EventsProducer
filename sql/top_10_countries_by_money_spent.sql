@@ -4,13 +4,10 @@ DROP FUNCTION net_to_struct;
 DROP FUNCTION ip_to_int;
 CREATE FUNCTION net_to_struct AS 'com.griddynamics.hive.udf.NetStringToStructSimple';
 CREATE FUNCTION ip_to_int AS 'com.griddynamics.hive.udf.IpStringToIntSimple';
-CREATE TEMPORARY TABLE masks(mask TINYINT);
 
-insert into masks (mask)
-values
-(1), (2), (3), (4), (5), (6), (7), (8), (9), (10), (11), (12), (13), (14), (15), (16),
-(17), (18), (19), (20), (21), (22), (23), (24), (25), (26), (27), (28), (29), (30), (31);
-
+INSERT OVERWRITE DIRECTORY '/user/rvaseev/results/countries_by_money_spent'
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
 select sum(e.product_price) country_spent, t.country_name
 from events tablesample(3000 rows) e, masks m
 join (select net_to_struct(network).net net, net_to_struct(network).mask mask, cl.country_name

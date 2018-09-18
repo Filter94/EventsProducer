@@ -12,5 +12,4 @@ CREATE EXTERNAL TABLE country_locations (
     FIELDS TERMINATED BY ','
     STORED AS TEXTFILE
     location '/user/rvaseev/geolite/external/country_locations'
-    TBLPROPERTIES ('skip.header.line.count'='1');
-load data inpath '/user/rvaseev/geolite/GeoLite2-Country-Locations-ru.csv' into table country_locations;
+    TBLPROPERTIES ('skip.header.line.count'='1','store.charset'='UTF-8');

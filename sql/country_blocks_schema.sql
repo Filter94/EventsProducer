@@ -12,4 +12,3 @@ CREATE EXTERNAL TABLE country_blocks (
     STORED AS TEXTFILE
     location '/user/rvaseev/geolite/external/country_blocks'
     TBLPROPERTIES ('skip.header.line.count'='1');
-load data inpath '/user/rvaseev/geolite/GeoLite2-Country-Blocks-IPv4.csv' into table country_blocks;
