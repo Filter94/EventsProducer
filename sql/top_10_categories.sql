@@ -1,5 +1,5 @@
-select productCategory, count(*) as purchases 
+select product_category, count(*) as purchases
 from events 
-group by productCategory 
+group by product_category
 order by purchases desc 
 limit 10;
