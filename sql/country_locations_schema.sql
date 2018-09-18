@@ -11,7 +11,6 @@ CREATE EXTERNAL TABLE country_locations (
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY ','
     STORED AS TEXTFILE
-    location '/user/cloudera/geolite/external/country_locations'
+    location '/user/rvaseev/geolite/external/country_locations'
     TBLPROPERTIES ('skip.header.line.count'='1');
-load data inpath '/user/cloudera/geolite/GeoLite2-Country-Locations-ru.csv' into table country_locations;
-
+load data inpath '/user/rvaseev/geolite/GeoLite2-Country-Locations-ru.csv' into table country_locations;

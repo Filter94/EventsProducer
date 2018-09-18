@@ -10,8 +10,6 @@ CREATE EXTERNAL TABLE country_blocks (
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY ','
     STORED AS TEXTFILE
-    location '/user/cloudera/geolite/external/country_blocks'
+    location '/user/rvaseev/geolite/external/country_blocks'
     TBLPROPERTIES ('skip.header.line.count'='1');
-load data inpath '/user/cloudera/geolite/GeoLite2-Country-Blocks-IPv4.csv' into table country_blocks;
-
-    
+load data inpath '/user/rvaseev/geolite/GeoLite2-Country-Blocks-IPv4.csv' into table country_blocks;
