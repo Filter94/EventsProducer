@@ -12,11 +12,11 @@ values
 (17), (18), (19), (20), (21), (22), (23), (24), (25), (26), (27), (28), (29), (30), (31);
 
 select sum(e.product_price) country_spent, t.country_name
-from events tablesample(50000 rows) e, masks m
-join (select cb.network, net_to_struct(network) net, cl.country_name
-  from country_locations cl
-  join country_blocks cb on cb.geoname_id = cl.geoname_id) as t
-  on m.mask = t.net.mask and ip_to_int(e.client_ip) & m.mask = t.net.net & t.net.mask
+from events tablesample(3000 rows) e, masks m
+join (select net_to_struct(network).net net, net_to_struct(network).mask mask, cl.country_name
+      from country_locations cl
+      join country_blocks cb on cb.geoname_id = cl.geoname_id) as t
+  on m.mask = t.mask and ip_to_int(e.client_ip) & m.mask = t.net & t.mask
 group by t.country_name
 order by country_spent desc
 limit 10;
