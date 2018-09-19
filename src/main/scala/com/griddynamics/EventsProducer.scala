@@ -13,7 +13,7 @@ object EventsProducer extends App with Logging {
     val eventsGenerator = DefaultEventsGenerator()
     val (host, port) = (args(0), args(1).toInt)
     val s = new Socket(InetAddress.getByName(host), port)
-    lazy val in = new BufferedSource(s.getInputStream).getLines()
+    val in = new BufferedSource(s.getInputStream).getLines()
     val out = new PrintStream(s.getOutputStream)
     var counter = 0
     sys.addShutdownHook({
